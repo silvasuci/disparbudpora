@@ -2,7 +2,7 @@
 $host = "localhost";
 $root = "root";
 $pass = "";
-$db_name = "dispekael";
+$db_name = "sk_pokdarwis";
 $mysqli = new mysqli($host, $root, $pass, $db_name);
 $mysqli->select_db($db_name);
 $mysqli->query("SET NAMES 'utf8'");

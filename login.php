@@ -20,7 +20,7 @@
     ?>
 
     <div class="kotak_login">
-        <center><img src="assets/img/dispar.jpg"></center>
+        <center><img src="assets/img/logosmd.png"></center>
         <p class="tulisan_login"> WELCOME TO <B>disparbudpora</B></p>
         <hr>
 

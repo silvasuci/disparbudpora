@@ -22,7 +22,7 @@
     ?>
 
     <div class="kotak_login">
-        <center><img src="assets/img/dispar.jpg"></center>
+        <center><img src="assets/img/logosmd.png"></center>
         <p class="tulisan_login"> DAFTAR AKUN BARU</p>
         <hr>
 
