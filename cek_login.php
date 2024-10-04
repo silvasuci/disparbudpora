@@ -10,14 +10,15 @@ $id = $_POST['id'];
 $password = $_POST['password'];
 
 // menyeleksi data user dengan username dan password yang sesuai
-$login = mysqli_query($db, "select * from users where id='$id' and password='$password'");
+$login = mysqli_query($db, "select * from daftar where id='$id' and password='$password'");
 // menghitung jumlah data yang ditemukan
 $cek = mysqli_num_rows($login);
 
 // cek apakah username dan password di temukan pada database
 if ($cek > 0) {
-
+    
     $data = mysqli_fetch_assoc($login);
+    $data = mysqli_fetch_assoc($daftar);
 
     // cek jika user login sebagai admin
     if ($data['level'] == "Admin") {
@@ -26,17 +27,14 @@ if ($cek > 0) {
         $_SESSION['level'] = "Admin";
         // alihkan ke halaman dashboard admin
         header("location:index.php");
-    } else if ($data['level'] == "Pegawai") {
-        $_SESSION['id'] = $id;
-        $_SESSION['level'] = "Pegawai";
-        header("location:index.php");
+
     } else if ($data['level'] == "User") {
         $_SESSION['id'] = $id;
         $_SESSION['level'] = "User";
         header("location:index.php");
     } else {
         // tidak ada sesi
-        header("location:index.php");
+        header("location:index999.php");
     }
 } else {
     header("location:login.php?pesan=gagal");

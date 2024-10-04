@@ -45,8 +45,8 @@ Kelompok :disparbudpora
 
 1. Login
 
-- login.php 1.1.1 (V)
-- cek-login.php 1.1.2 (P)
+- login.php (V)
+- cek-login.php (P)
 
 2. user
 

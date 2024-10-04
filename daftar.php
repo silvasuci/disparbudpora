@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Disparbudpora Login</title>
+    <title>Disparbudpora daftar</title>
     <link rel="stylesheet" type="text/css" href="assets/css/login.css">
 </head>
 

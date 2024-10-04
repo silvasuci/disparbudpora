@@ -87,8 +87,7 @@ require_once "config/database.php";
     <?php
     if ($_SESSION['level'] == "Admin") {
       include 'menu/menu-admin.php';
-    } else if ($_SESSION['level'] == "Pegawai") {
-      include 'menu/menu-pegawai.php';
+
     } else if ($_SESSION['level'] == "User") {
       include 'menu/menu-user.php';
     }
@@ -99,8 +98,7 @@ require_once "config/database.php";
     <?php
     if ($_SESSION['level'] == "Admin") {
       include 'routes/admin-routes.php';
-    } else if ($_SESSION['level'] == "Pegawai") {
-      include 'routes/pegawai-routes.php';
+      
     } else if ($_SESSION['level'] == "User") {
       include 'routes/user-routes.php';
     } else if ($_SESSION['level'] == "") {
