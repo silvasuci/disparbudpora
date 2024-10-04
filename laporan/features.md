@@ -1,27 +1,27 @@
 # Features this App
 
-Nama Aplikasi :
+Nama Aplikasi : aplikasi pengesahan sk pokdarwis
 
-Kelompok :
+Kelompok :disparbudpora
 
 ## Pengguna
 
 1. Admin
-2. Pegawai
-3. Siswa (users)
+3. pokdarwis (users)
 
 ## Menu
 
 **Untuk Pengguna 1(Admin)**
 
+- buat akun
 - login
+- pesan
+- data pokdarwis
+
 - user
 - users
 - pegawai
-- seminar
-- nilai
 - logout
-- backup db
 
 **Untuk Pengguna 2(Pegawai)**
 
