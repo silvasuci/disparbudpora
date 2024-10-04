@@ -20,7 +20,7 @@
         $alamat = $data['alamat'];
         $instansi = $data['instansi'];
         $telp = $data['telp'];
-        $stat = $data['stat'];
+        $state = $data['state'];
         $jumlah1  = mysqli_num_rows($jumlah_record1);
 
         if ($stat == "Aktif") {

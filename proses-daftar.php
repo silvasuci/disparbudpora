@@ -3,14 +3,14 @@
 require_once "config/database.php";
 
 if (isset($_POST['simpan'])) {
-    $id            = $_POST['nis'];
+    $id            = $_POST['id'];
     $username      = mysqli_real_escape_string($db, trim($_POST['username']));
+    $alamat      = mysqli_real_escape_string($db, trim($_POST['alamat pokdarwis']));
+    $potensi       = mysqli_real_escape_string($db, trim($_POST['potensi wisata']));
     $password      = mysqli_real_escape_string($db, trim($_POST['password']));
-    $level         = $_POST['level'];
-    $nis           = $_POST['nis'];
 
     // perintah query untuk menyimpan data ke tabel is_siswa
-    $query = mysqli_query($db, "INSERT INTO user (id, username, password, level, nis) VALUES('$id','$username', '$password', '$level', '$nis')");
+    $query = mysqli_query($db, "INSERT INTO user (id, username, alamat pokdarwis, potensi wisata, password) VALUES('$id','$username', '$alamat pokdarwis', '$potensi  wisata', '$password')");
 
     // cek hasil query
     if ($query) {
