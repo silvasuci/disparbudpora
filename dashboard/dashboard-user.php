@@ -23,11 +23,11 @@
         $state = $data['state'];
         $jumlah1  = mysqli_num_rows($jumlah_record1);
 
-        if ($stat == "Aktif") {
+        if ($state == "Aktif") {
             echo "<p>User <b>$data[nama]</b> sudah terdaftar";
             echo "<p><a data-toggle='tooltip' data-placement='top' title='Edit' style='margin-right:5px' class='btn btn-primary btn-sm' href='?page=users-edit&id=$data[nis]'> <i class='glyphicon glyphicon-edit'></i>&nbsp Edit Data Diri</a>";
         } else {
-            echo "Data Users sudah terdaftar, Namun belum aktif, 
+            echo "Data users sudah terdaftar, Namun belum aktif, 
         <p><b>Silahkan konfirmasi kepada admin untuk diaktifkan </b> <hr>";
             include "./users/linkwa.php";
         }
