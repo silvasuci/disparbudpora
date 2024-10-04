@@ -15,28 +15,29 @@ Kelompok :disparbudpora
 
 - buat akun
 - login
+- menu
+- profile
+- pengaturan
 - pesan
 - data pokdarwis
+- balas pesan
 
 - user
 - users
 - pegawai
 - logout
 
-**Untuk Pengguna 2(Pegawai)**
+**Untuk Pengguna 2(Pengguna Pokdarwis)**
 
+- buat akun
 - login
-- user
-- profile (ubah username & password)
+- menu
+- pengaturan
+- profile
+- pendaftaran sk pokdarwis
 - seminar
 - nilai
 - Logout
-
-**Untuk Pengguna 3(Users/Siswa)**
-
-- login
-- daftar
-- seminar
 
 ## Fitur
 
