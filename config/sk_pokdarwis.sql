@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 04 Okt 2024 pada 06.03
+-- Waktu pembuatan: 05 Okt 2024 pada 08.11
 -- Versi server: 10.4.20-MariaDB
 -- Versi PHP: 8.0.9
 
@@ -42,10 +42,17 @@ CREATE TABLE `admin` (
 CREATE TABLE `daftar` (
   `id` int(9) NOT NULL,
   `username` varchar(50) NOT NULL,
-  `alamat` text NOT NULL,
-  `potensi` text NOT NULL,
+  `alamat pokdarwis` text NOT NULL,
+  `potensi wisata` varchar(50) NOT NULL,
   `password` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `daftar`
+--
+
+INSERT INTO `daftar` (`id`, `username`, `alamat pokdarwis`, `potensi wisata`, `password`) VALUES
+(8, 'samalengoh camp', 'gunung datar', 'gunung', 'ddd');
 
 -- --------------------------------------------------------
 
@@ -141,7 +148,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT untuk tabel `daftar`
 --
 ALTER TABLE `daftar`
-  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `login`
