@@ -3,7 +3,7 @@
 require_once 'config/database.php';
 
 // membuat variabel untuk menampung data dari form
-$nis        = $_POST['nis'];
+$nip        = $_POST['nip'];
 $nama       = $_POST['nama'];
 $jabatan    = $_POST['jabatan'];
 $bidang     = $_POST['bidang'];
@@ -23,9 +23,9 @@ if ($foto != "") {
     if (in_array($ekstensi, $ekstensi_diperbolehkan) === true) {
         move_uploaded_file($file_tmp, 'pegawai/gambar/' . $nama_foto_baru); //memindah file foto ke folder foto
 
-        // jalankan query UPDATE berdasarkan NIS yang pegawainya kita edit
+        // jalankan query UPDATE berdasarkan nip yang pegawainya kita edit
         $query  = "UPDATE pegawai SET nama = '$nama', jabatan = '$jabatan', bidang = '$bidang', telp = '$telp', email = '$email', foto = '$nama_foto_baru'";
-        $query .= "WHERE nis = '$nis'";
+        $query .= "WHERE nip = '$nip'";
         $result = mysqli_query($db, $query);
         // periska query apakah ada error
         if (!$result) {
@@ -39,9 +39,9 @@ if ($foto != "") {
         echo "<script>window.location='?page=pegawai-tampil&alert=5';</script>";
     }
 } else {
-    // jalankan query UPDATE berdasarkan NIS yang pegawainya kita edit
+    // jalankan query UPDATE berdasarkan nip yang pegawainya kita edit
     $query  = "UPDATE pegawai SET nama = '$nama', jabatan = '$jabatan', bidang = '$bidang', telp = '$telp', email = '$email'";
-    $query .= "WHERE nis = '$nis'";
+    $query .= "WHERE nip = '$nip'";
     $result = mysqli_query($db, $query);
     // periska query apakah ada error
     if (!$result) {

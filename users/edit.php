@@ -1,11 +1,11 @@
 <?php
 if (isset($_GET['id'])) {
     $nis   = $_GET['id'];
-    $query = mysqli_query($db, "SELECT * FROM users WHERE nis='$nis'") or die('Query Error : ' . mysqli_error($db));
+    $query = mysqli_query($db, "SELECT * FROM users WHERE nip='$nip'") or die('Query Error : ' . mysqli_error($db));
     while ($data  = mysqli_fetch_assoc($query)) {
-        $nis      = $data['nis'];
+        $nip      = $data['nip'];
         $nama     = $data['nama'];
-        $tanggal_lahir  = $data['tanggal_lahir'];
+        $tanggal_buat  = $data['tanggal_buat'];
         $alamat   = $data['alamat'];
         $telp     = $data['telp'];
         $instansi    = $data['instansi'];
@@ -23,7 +23,7 @@ if (isset($_GET['id'])) {
             <div class="form-group">
                 <label class="col-sm-2 control-label">NIS</label>
                 <div class="col-sm-2">
-                    <input type="text" class="form-control" name="nis" value="<?php echo $nis; ?>">
+                    <input type="text" class="form-control" name="nip" value="<?php echo $nip; ?>">
                 </div>
             </div>
 
@@ -35,9 +35,9 @@ if (isset($_GET['id'])) {
             </div>
 
             <div class="form-group">
-                <label class="col-sm-2 control-label">Tanggal Lahir</label>
+                <label class="col-sm-2 control-label">Tanggal Buat</label>
                 <div class="col-sm-2">
-                    <input type="date" class="form-control" name="tanggal_lahir" autocomplete="off" value="<?php echo $tanggal_lahir; ?>">
+                    <input type="date" class="form-control" name="tanggal_buat" autocomplete="off" value="<?php echo $tanggal_buat; ?>">
                 </div>
             </div>
 

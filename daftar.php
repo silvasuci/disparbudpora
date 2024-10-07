@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Dispekael Login</title>
+    <title>Disparbudpora Daftar</title>
     <link rel="stylesheet" type="text/css" href="assets/css/login.css">
 </head>
 
@@ -22,8 +22,8 @@
     ?>
 
     <div class="kotak_login">
-        <center><img src="assets/img/favicon.png"></center>
-        <p class="tulisan_login"> DAFTAR AKUN BARU</p>
+        <center><img src="assets/img/favicon9.png"></center>
+        <p class="tulisan_login"> CREATE NEW ACCOUNT</p>
         <hr>
 
         <form action="proses-daftar.php" method="post">
@@ -32,8 +32,8 @@
             <label>Password</label>
             <p><input type="password" name="password" class="form_login" placeholder="Masukkan Password" required="required"></p>
             <p><input type="hidden" name="level" class="form_login" placeholder="Masukan id" value="User" required="required"></P>
-            <label>Nomor Induk Siswa</label>
-            <p><input type="number" name="nis" class="form_login" placeholder="Masukan Nomor Induk Siswa" required="required"></p>
+            <label>Id/NIP </label>
+            <p><input type="number" name="nip" class="form_login" placeholder="Masukan Id/Nomor Induk Pokdarwis" required="required"></p>
             <p>
                 <center><input type="submit" name="simpan" class="tombol_login" value="DAFTAR">
             </p>

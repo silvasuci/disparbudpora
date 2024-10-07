@@ -79,7 +79,7 @@ if (isset($_POST['cari'])) {
                         <thead>
                             <tr>
                                 <th>No.</th>
-                                <th>NIS</th>
+                                <th>NIP</th>
                                 <th>Nama</th>
                                 <th>Jabatan</th>
                                 <th>Bidang</th>
@@ -93,7 +93,7 @@ if (isset($_POST['cari'])) {
                             $batas = 10;
 
                             if (isset($cari)) {
-                                $jumlah_record = mysqli_query($db, "SELECT * FROM pegawai WHERE nis LIKE '%$cari%' OR nama LIKE '%$cari%'") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
+                                $jumlah_record = mysqli_query($db, "SELECT * FROM pegawai WHERE nip LIKE '%$cari%' OR nama LIKE '%$cari%'") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
                             } else {
                                 $jumlah_record = mysqli_query($db, "SELECT * FROM pegawai") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
                             }
@@ -105,35 +105,35 @@ if (isset($_POST['cari'])) {
                             /*-------------------------------------------------------------------*/
                             $no = 1;
                             if (isset($cari)) {
-                                $query = mysqli_query($db, "SELECT * FROM pegawai WHERE nis LIKE '%$cari%' OR nama LIKE '%$cari%' ORDER BY nis LIMIT $mulai, $batas")
+                                $query = mysqli_query($db, "SELECT * FROM pegawai WHERE nip LIKE '%$cari%' OR nama LIKE '%$cari%' ORDER BY nip LIMIT $mulai, $batas")
                                     or die('Ada kesalahan pada query pegawai: ' . mysqli_error($db));
                             } else {
-                                $query = mysqli_query($db, "SELECT * FROM pegawai ORDER BY nis LIMIT $mulai, $batas") or die('Ada kesalahan pada query pegawai: ' . mysqli_error($db));
+                                $query = mysqli_query($db, "SELECT * FROM pegawai ORDER BY nip LIMIT $mulai, $batas") or die('Ada kesalahan pada query pegawai: ' . mysqli_error($db));
                             }
 
                             while ($data = mysqli_fetch_assoc($query)) {
 
                                 echo "  <tr>
                       <td width='20'>$no</td>
-                      <td width='100'>$data[nis]</td>
+                      <td width='100'>$data[nip]</td>
                       <td width='150'>$data[nama]</td>
                       <td width='150'>$data[jabatan]</td>
                       <td width='150'>$data[bidang]</td>
                       <td width='150' class='center'>
                         <div class=''>
 
-                        <a data-toggle='tooltip' data-placement='top' title='Detail' style='margin-right:5px' class='btn btn-success btn-sm' href='?page=pegawai-detail&id=$data[nis]'> <i class='glyphicon glyphicon-eye-open'></i> </a> 
+                        <a data-toggle='tooltip' data-placement='top' title='Detail' style='margin-right:5px' class='btn btn-success btn-sm' href='?page=pegawai-detail&id=$data[nip]'> <i class='glyphicon glyphicon-eye-open'></i> </a> 
 
-                        <a data-toggle='tooltip' data-placement='top' title='Print' style='margin-right:5px' class='btn btn-warning btn-sm' href='?page=pegawai-print-detail&id=$data[nis]' target='_blank'> <i class='glyphicon glyphicon-print'></i> </a>
+                        <a data-toggle='tooltip' data-placement='top' title='Print' style='margin-right:5px' class='btn btn-warning btn-sm' href='?page=pegawai-print-detail&id=$data[nip]' target='_blank'> <i class='glyphicon glyphicon-print'></i> </a>
 
-                        <a data-toggle='tooltip' data-placement='top' title='Edit' style='margin-right:5px' class='btn btn-primary btn-sm' href='?page=pegawai-edit&id=$data[nis]'> <i class='glyphicon glyphicon-edit'></i></a>
+                        <a data-toggle='tooltip' data-placement='top' title='Edit' style='margin-right:5px' class='btn btn-primary btn-sm' href='?page=pegawai-edit&id=$data[nip]'> <i class='glyphicon glyphicon-edit'></i></a>
                         
-                        <a data-toggle='tooltip' data-placement='top' title='Kirim' style='margin-right:5px' class='btn btn-info btn-sm' href='?page=pegawai-kirim&id=$data[nis]'><i class='glyphicon glyphicon-share'></i></a>  
+                        <a data-toggle='tooltip' data-placement='top' title='Kirim' style='margin-right:5px' class='btn btn-info btn-sm' href='?page=pegawai-kirim&id=$data[nip]'><i class='glyphicon glyphicon-share'></i></a>  
                                                 
                                                 ";
 
                             ?>
-                                <a data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm" href="?page=pegawai-hapus&id=<?php echo $data['nis']; ?>" onclick="return confirm('Anda yakin ingin menghapus <?php echo $data['nama']; ?>?');"> <i class="glyphicon glyphicon-trash"></i></a>
+                                <a data-toggle="tooltip" data-placement="top" title="Hapus" class="btn btn-danger btn-sm" href="?page=pegawai-hapus&id=<?php echo $data['nip']; ?>" onclick="return confirm('Anda yakin ingin menghapus <?php echo $data['nama']; ?>?');"> <i class="glyphicon glyphicon-trash"></i></a>
                             <?php
                                 echo "
                         </div>

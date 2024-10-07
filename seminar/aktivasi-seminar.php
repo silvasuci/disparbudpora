@@ -1,10 +1,10 @@
 <?php
 if (isset($_GET['id'])) {
     $idseminar   = $_GET['id'];
-    $query = mysqli_query($db, "SELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nis = seminar.nis WHERE idseminar='$idseminar'") or die('Query Error : ' . mysqli_error($db));
+    $query = mysqli_query($db, "SELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nip = seminar.nip WHERE idseminar='$idseminar'") or die('Query Error : ' . mysqli_error($db));
     while ($data  = mysqli_fetch_assoc($query)) {
         $idseminar = $data['idseminar'];
-        $nis       = $data['nis'];
+        $nip       = $data['nip'];
         $judul     = $data['judul'];
         $statussem    = $data['statussem'];
         $ket       = $data['ket'];
@@ -70,7 +70,7 @@ if (isset($_GET['id'])) {
                         $query = "SELECT * FROM pegawai where bidang = 'Laporan' ";
                         $result = mysqli_query($db, $query);
                         foreach ($result as $data) { ?>
-                            <option value=" <?php echo $data["nis"]; ?> "> <?php echo $data["nis"] . " - " . $data["nama"]; ?> </option>
+                            <option value=" <?php echo $data["nip"]; ?> "> <?php echo $data["nip"] . " - " . $data["nama"]; ?> </option>
                         <?php } ?>
 
                     </select>
@@ -87,7 +87,7 @@ if (isset($_GET['id'])) {
                         $query = "SELECT * FROM pegawai where bidang = 'Aplikasi' ";
                         $result = mysqli_query($db, $query);
                         foreach ($result as $data) { ?>
-                            <option value=" <?php echo $data["nis"]; ?> "> <?php echo $data["nis"] . " - " . $data["nama"]; ?> </option>
+                            <option value=" <?php echo $data["nip"]; ?> "> <?php echo $data["nip"] . " - " . $data["nama"]; ?> </option>
                         <?php } ?>
 
                     </select>

@@ -9,10 +9,10 @@ require_once "config/database.php";
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Dispekael</title>
+  <title>Disparbudpora</title>
 
   <!-- favicon -->
-  <link rel="shortcut icon" href="assets/img/favicon.png">
+  <link rel="shortcut icon" href="assets/img/favicon9.png">
 
   <!-- Bootstrap -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet">
@@ -111,8 +111,8 @@ require_once "config/database.php";
 
   <footer class="footer">
     <div class="container-fluid">
-      <p class="text-muted pull-left">Dispekael</p>
-      <p class="text-muted pull-right print">By <a href="http://www.instagram.com/mmmaldin" target="_blank">Maldin</a></p>
+      <p class="text-muted pull-left">Disparbudpora</p>
+      <p class="text-muted pull-right print">By <a href="http://www.instagram.com/Disparbudpora.kabsumedang" target="_blank">Disparbudpora</a></p>
     </div>
   </footer>
 

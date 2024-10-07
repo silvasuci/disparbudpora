@@ -15,7 +15,7 @@
           $username  = $data['username'];
           $password  = $data['password'];
           $level     = $data['level'];
-          $nis       = $data['nis'];
+          $nip       = $data['nip'];
         }
       }
       ?>
@@ -54,9 +54,9 @@
             </div>
 
             <div class="form-group">
-              <label class="col-sm-2 control-label">Nis</label>
+              <label class="col-sm-2 control-label">Nip</label>
               <div class="col-sm-3">
-                <input type="text" class="form-control" name="nis" autocomplete="off" value="<?php echo $nis; ?>" required>
+                <input type="text" class="form-control" name="nip" autocomplete="off" value="<?php echo $nip; ?>" required>
               </div>
             </div>
 

@@ -89,9 +89,9 @@ if (isset($_POST['cari'])) {
                             $batas = 10;
 
                             if (isset($cari)) {
-                                $jumlah_record = mysqli_query($db, "SELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nis = seminar.nis WHERE instansi LIKE '%$cari%' OR nama LIKE '%$cari%'") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
+                                $jumlah_record = mysqli_query($db, "SELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nip = seminar.nip WHERE instansi LIKE '%$cari%' OR nama LIKE '%$cari%'") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
                             } else {
-                                $jumlah_record = mysqli_query($db, "SSELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nis = seminar.nis") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
+                                $jumlah_record = mysqli_query($db, "SSELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nip = seminar.nip") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
                             }
 
                             $jumlah  = mysqli_num_rows($jumlah_record);
@@ -101,10 +101,10 @@ if (isset($_POST['cari'])) {
                             /*-------------------------------------------------------------------*/
                             $no = 1;
                             if (isset($cari)) {
-                                $query = mysqli_query($db, "SELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nis = seminar.nis WHERE instansi LIKE '%$cari%' OR nama LIKE '%$cari%' ORDER BY nis LIMIT $mulai, $batas")
+                                $query = mysqli_query($db, "SELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nip = seminar.nip WHERE instansi LIKE '%$cari%' OR nama LIKE '%$cari%' ORDER BY nip LIMIT $mulai, $batas")
                                     or die('Ada kesalahan pada query seminar: ' . mysqli_error($db));
                             } else {
-                                $query = mysqli_query($db, "SELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nis = seminar.nis ORDER BY nis LIMIT $mulai, $batas") or die('Ada kesalahan pada query seminar: ' . mysqli_error($db));
+                                $query = mysqli_query($db, "SELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nip = seminar.nip ORDER BY nip LIMIT $mulai, $batas") or die('Ada kesalahan pada query seminar: ' . mysqli_error($db));
                             }
 
                             while ($data = mysqli_fetch_assoc($query)) {

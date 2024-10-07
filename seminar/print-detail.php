@@ -7,10 +7,10 @@
         <?php
         if (isset($_GET['id'])) {
             $idseminar   = $_GET['id'];
-            $query = mysqli_query($db, "SELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nis = seminar.nis WHERE idseminar='$idseminar'") or die('Query Error : ' . mysqli_error($db));
+            $query = mysqli_query($db, "SELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nip = seminar.nip WHERE idseminar='$idseminar'") or die('Query Error : ' . mysqli_error($db));
             while ($data  = mysqli_fetch_assoc($query)) {
                 $idseminar        = $data['idseminar'];
-                $nis              = $data['nis'];
+                $nip              = $data['nip'];
                 $judul            = $data['judul'];
                 $tautan           = $data['tautan'];
                 $file             = $data['file'];

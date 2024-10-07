@@ -4,10 +4,10 @@
         <?php
         if (isset($_GET['id'])) {
             $idseminar   = $_GET['id'];
-            $query = mysqli_query($db, "SELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nis = seminar.nis WHERE idseminar='$idseminar'") or die('Query Error : ' . mysqli_error($db));
+            $query = mysqli_query($db, "SELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nip = seminar.nip WHERE idseminar='$idseminar'") or die('Query Error : ' . mysqli_error($db));
             while ($data  = mysqli_fetch_assoc($query)) {
                 $idseminar        = $data['idseminar'];
-                $nis              = $data['nis'];
+                $nip              = $data['nip'];
                 $judul            = $data['judul'];
                 $tautan           = $data['tautan'];
                 $file             = $data['file'];
@@ -34,7 +34,7 @@
             <li class="list-group-item"><b>Status: <?php echo $statussem; ?></b> (<?php echo $ket; ?>)</li>
 
             <?php
-            $pengujilaporan = mysqli_query($db, "SELECT * from pegawai WHERE nis='$pengujilap'") or die('Query Error : ' . mysqli_error($db));
+            $pengujilaporan = mysqli_query($db, "SELECT * from pegawai WHERE nip='$pengujilap'") or die('Query Error : ' . mysqli_error($db));
             while ($pengujilaporans = mysqli_fetch_assoc($pengujilaporan)) {
                 $pengujilaporann = $pengujilaporans['nama'];
             } ?>
@@ -42,7 +42,7 @@
             <li class="list-group-item"><b>Penguji Laporan : </b><?php echo $pengujilaporann; ?></li>
 
             <?php
-            $pengujiaplikasi = mysqli_query($db, "SELECT * from pegawai WHERE nis='$pengujiapl'") or die('Query Error : ' . mysqli_error($db));
+            $pengujiaplikasi = mysqli_query($db, "SELECT * from pegawai WHERE nip='$pengujiapl'") or die('Query Error : ' . mysqli_error($db));
             while ($pengujiaplikasis = mysqli_fetch_assoc($pengujiaplikasi)) {
                 $pengujiaplikasin = $pengujiaplikasis['nama'];
             } ?>

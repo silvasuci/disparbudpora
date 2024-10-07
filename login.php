@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Dispekael Login</title>
+    <title>Disparbudpora Login</title>
     <link rel="stylesheet" type="text/css" href="assets/css/login.css">
 </head>
 
@@ -14,19 +14,19 @@
         } else if ($_GET['pesan'] == "logindulu") {
             echo "<div class='alert'>Silahkan Login dulu !</div>";
         } else if ($_GET['pesan'] == "3") {
-            echo "<div class='alert'><b>Pendaftaran akun berhasil.</b> Silahkan Login menggunakan id / NIS dan password yang barusan anda buat</div>";
+            echo "<div class='alert'><b>Pendaftaran akun berhasil.</b> Silahkan Login menggunakan id / NIP dan password yang barusan anda buat</div>";
         }
     }
     ?>
 
     <div class="kotak_login">
-        <center><img src="assets/img/favicon.png"></center>
-        <p class="tulisan_login"> WELCOME TO <B>DISPEKAEL</B></p>
+        <center><img src="assets/img/favicon9.png"></center>
+        <p class="tulisan_login"> WELCOME TO <B>DISPARBUDPORA</B></p>
         <hr>
 
         <form action="cek_login.php" method="post">
-            <P><label>Id / NIS</label></P>
-            <input type="text" name="id" class="form_login" placeholder="Masukan id / NIS" required="required">
+            <P><label>Id / NIP</label></P>
+            <input type="text" name="id" class="form_login" placeholder="Masukan id / NIP" required="required">
             <label>Password</label>
             <p><input type="password" name="password" class="form_login" placeholder="Masukkan Password" required="required"></p>
 

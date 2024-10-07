@@ -2,19 +2,19 @@
 include 'config/database.php';
 
 $ids = $_SESSION['id'];
-$jumlah_record1 = mysqli_query($db, "SELECT user.id, pegawai.* FROM user JOIN pegawai ON pegawai.nis = user.nis where id = $ids") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
+$jumlah_record1 = mysqli_query($db, "SELECT user.id, pegawai.* FROM user JOIN pegawai ON pegawai.nip = user.nip where id = $ids") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
 $data = mysqli_fetch_assoc($jumlah_record1);
-$niss = $data['nis'];
+$nips = $data['nip'];
 $namas = $data['nama'];
 $jabatans = $data['jabatan'];
 $bidangs = $data['bidang'];
 
 // dashboard pegawai
 $jum_users_prakerin = mysqli_num_rows(mysqli_query($db, "SELECT * FROM users where instansi = '$bidangs'"));
-$jum_users_laporan = mysqli_num_rows(mysqli_query($db, "SELECT * FROM seminar where pengujilap = '$niss'"));
-$jum_users_aplikasi = mysqli_num_rows(mysqli_query($db, "SELECT * FROM seminar where pengujiapl = '$niss'"));
+$jum_users_laporan = mysqli_num_rows(mysqli_query($db, "SELECT * FROM seminar where pengujilap = '$nips'"));
+$jum_users_aplikasi = mysqli_num_rows(mysqli_query($db, "SELECT * FROM seminar where pengujiapl = '$nips'"));
 
-$pegnil_prakerin = mysqli_num_rows(mysqli_query($db, "SELECT seminar.nis, users.instansi FROM seminar JOIN users ON users.nis = seminar.nis where instansi = '$bidangs' and nilaiprakerin != '0'"));
+$pegnil_prakerin = mysqli_num_rows(mysqli_query($db, "SELECT seminar.nip, users.instansi FROM seminar JOIN users ON users.nip = seminar.nip where instansi = '$bidangs' and nilaiprakerin != '0'"));
 $pegnil_laporan = mysqli_num_rows(mysqli_query($db, "SELECT * FROM seminar where pengujilap = '$bidangs' and nilailaporan != '0'"));
 $pegnil_aplikasi = mysqli_num_rows(mysqli_query($db, "SELECT * FROM seminar where pengujiapl = '$bidangs' and nilaiaplikasi != '0'"));
 

@@ -4,10 +4,10 @@ require_once "config/database.php";
 
 if (isset($_GET['id'])) {
 
-    $nis = $_GET['id'];
+    $nip = $_GET['id'];
 
     // perintah query untuk menghapus data pada tabel
-    $query = mysqli_query($db, "DELETE FROM users WHERE nis='$nis'");
+    $query = mysqli_query($db, "DELETE FROM users WHERE nip='$nip'");
 
     // cek hasil query
     if ($query) {

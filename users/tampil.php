@@ -93,7 +93,7 @@ if (isset($_POST['cari'])) {
                         <thead>
                             <tr>
                                 <th>No.</th>
-                                <th>NIS</th>
+                                <th>NIP</th>
                                 <th>Nama</th>
                                 <th>Instansi</th>
                                 <th>Status</th>
@@ -119,30 +119,30 @@ if (isset($_POST['cari'])) {
                             /*-------------------------------------------------------------------*/
                             $no = 1;
                             if (isset($cari)) {
-                                $query = mysqli_query($db, "SELECT * FROM users WHERE instansi LIKE '%$cari%' OR nama LIKE '%$cari%' ORDER BY nis LIMIT $mulai, $batas")
+                                $query = mysqli_query($db, "SELECT * FROM users WHERE instansi LIKE '%$cari%' OR nama LIKE '%$cari%' ORDER BY nip LIMIT $mulai, $batas")
                                     or die('Ada kesalahan pada query users: ' . mysqli_error($db));
                             } else {
-                                $query = mysqli_query($db, "SELECT * FROM users ORDER BY nis LIMIT $mulai, $batas") or die('Ada kesalahan pada query users: ' . mysqli_error($db));
+                                $query = mysqli_query($db, "SELECT * FROM users ORDER BY nip LIMIT $mulai, $batas") or die('Ada kesalahan pada query users: ' . mysqli_error($db));
                             }
 
                             while ($data = mysqli_fetch_assoc($query)) {
 
                                 echo "  <tr>
                       <td width='20'>$no</td>
-                      <td width='100'>$data[nis]</td>
+                      <td width='100'>$data[nip]</td>
                       <td width='150'>$data[nama]</td>
                       <td width='150'>$data[instansi]</td>
                       <td width='150'>$data[stat]</td>
                       <td width='150' class='center'>
                         <div class=''>
-                        <a data-toggle='tooltip' data-placement='top' title='Detail' style='margin-right:5px' class='btn btn-success btn-sm' href='?page=users-detail&id=$data[nis]'> <i class='glyphicon glyphicon-eye-open'></i></a>
-                        <a data-toggle='tooltip' data-placement='top' title='Detail' style='margin-right:5px' class='btn btn-warning btn-sm' href='?page=users-print-detail&id=$data[nis]' target='_blank'> <i class='glyphicon glyphicon-print'></i></a>";;
+                        <a data-toggle='tooltip' data-placement='top' title='Detail' style='margin-right:5px' class='btn btn-success btn-sm' href='?page=users-detail&id=$data[nip]'> <i class='glyphicon glyphicon-eye-open'></i></a>
+                        <a data-toggle='tooltip' data-placement='top' title='Detail' style='margin-right:5px' class='btn btn-warning btn-sm' href='?page=users-print-detail&id=$data[nip]' target='_blank'> <i class='glyphicon glyphicon-print'></i></a>";;
                             ?>
                                 <?php
                                 if ($_SESSION['level'] == "Admin") {
-                                    echo "<a data-toggle='tooltip' data-placement='top' title='Hapus' class='btn btn-danger btn-sm' href='?page=users-hapus&id=$data[nis]' onclick='return confirm('Anda yakin ingin menghapus $data[nama]');'> <i class='glyphicon glyphicon-trash'></i></a>&nbsp";
+                                    echo "<a data-toggle='tooltip' data-placement='top' title='Hapus' class='btn btn-danger btn-sm' href='?page=users-hapus&id=$data[nip]' onclick='return confirm('Anda yakin ingin menghapus $data[nama]');'> <i class='glyphicon glyphicon-trash'></i></a>&nbsp";
 
-                                    echo " <a data-toggle='tooltip' data-placement='top' title='Aktivasi' style='margin-right:5px' class='btn btn-primary btn-sm' href='?page=aktivasi-users&id=$data[nis]'> <i class='glyphicon glyphicon-ok'></i></a>";
+                                    echo " <a data-toggle='tooltip' data-placement='top' title='Aktivasi' style='margin-right:5px' class='btn btn-primary btn-sm' href='?page=aktivasi-users&id=$data[nip]'> <i class='glyphicon glyphicon-ok'></i></a>";
                                 } else if ($_SESSION['level'] == "User") {
                                 }
                                 ?>

@@ -2,13 +2,13 @@
 // memanggil file koneksi.php untuk melakukan koneksi database
 require_once 'config/database.php';
 
-$nis        = $_POST['nis'];
+$nip        = $_POST['nip'];
 
 $stat     = $_POST['stat'];
 
-// jalankan query UPDATE berdasarkan NIS yang usersnya kita edit
+// jalankan query UPDATE berdasarkan nip yang usersnya kita edit
 $query  = "UPDATE users SET stat = '$stat'";
-$query .= "WHERE nis = '$nis'";
+$query .= "WHERE nip = '$nip'";
 $result = mysqli_query($db, $query);
 // periska query apakah ada error
 if (!$result) {

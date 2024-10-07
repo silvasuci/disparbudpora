@@ -8,7 +8,7 @@
                 $ids = $_SESSION['id'];
                 $jumlah_record1 = mysqli_query($db, "SELECT * FROM user where id = $ids") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
                 $data = mysqli_fetch_assoc($jumlah_record1);
-                $niss = $data['nis'];
+                $nips = $data['nip'];
                 ?>
             </h4>
         </div> <!-- /.page-header -->
@@ -18,9 +18,9 @@
                 <form class="form-horizontal" action="?page=users-simpan" method="post" enctype="multipart/form-data">
 
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">NIS</label>
+                        <label class="col-sm-2 control-label">NIP</label>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" name="nis" value="<?php echo $niss; ?>" autocomplete="off" readonly>
+                            <input type="text" class="form-control" name="nip" value="<?php echo $nips; ?>" autocomplete="off" readonly>
                         </div>
                     </div>
 
@@ -39,9 +39,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Tanggal Lahir</label>
+                        <label class="col-sm-2 control-label">Tanggal Buat</label>
                         <div class="col-sm-3">
-                            <input type="date" class="form-control" name="tanggal_lahir" autocomplete="off" required>
+                            <input type="date" class="form-control" name="tanggal_buat" autocomplete="off" required>
                         </div>
                     </div>
 

@@ -9,7 +9,7 @@
 
         <a class="navbar-brand" href="index.php">
             <i class="glyphicon glyphicon-grain"></i>
-            <b>Dispekael</b> <span class="badge"><?php echo $_SESSION['level']; ?></span></a>
+            <b>Disparbudpora</b> <span class="badge"><?php echo $_SESSION['level']; ?></span></a>
     </div>
 
     <?php

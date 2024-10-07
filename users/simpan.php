@@ -1,10 +1,10 @@
 <?php
 include 'config/database.php';
 
-$nis        = $_POST['nis'];
+$nip        = $_POST['nip'];
 $id         = $_POST['id'];
 $nama       = $_POST['nama'];
-$tanggal_lahir    = $_POST['tanggal_lahir'];
+$tanggal_buat    = $_POST['tanggal_buat'];
 $alamat     = $_POST['alamat'];
 $instansi   = $_POST['instansi'];
 $telp       = $_POST['telp'];
@@ -22,7 +22,7 @@ if (!in_array($ext, $ekstensi)) {
     if ($ukuran < 1044070) {
         $xx = $rand . '_' . $filename;
         move_uploaded_file($_FILES['foto']['tmp_name'], 'users/gambar/' . $rand . '_' . $filename);
-        mysqli_query($db, "INSERT INTO users VALUES('$nis','$id','$nama','$tanggal_lahir','$alamat','$instansi','$telp','$stat','$xx')");
+        mysqli_query($db, "INSERT INTO users VALUES('$nip','$id','$nama','$tanggal_buat','$alamat','$instansi','$telp','$stat','$xx')");
         header("location:index.php");
     } else {
         header("location:?page=users-tampil&alert=1");

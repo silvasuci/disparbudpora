@@ -2,21 +2,21 @@
 <?php
 
 $ids = $_SESSION['id'];
-$jabbid = mysqli_query($db, "SELECT user.id, pegawai.* FROM user JOIN pegawai ON pegawai.nis = user.nis where id = $ids") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
+$jabbid = mysqli_query($db, "SELECT user.id, pegawai.* FROM user JOIN pegawai ON pegawai.nip = user.nip where id = $ids") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
 $jb = mysqli_fetch_assoc($jabbid);
-$niss = $jb['nis'];
+$nips = $jb['nip'];
 $nama = $jb['nama'];
 $jab = $jb['jabatan'];
 $bid = $jb['bidang'];
 
-echo $niss . $bid . $jab . $nama;
+echo $nips . $bid . $jab . $nama;
 
 if (isset($_GET['id'])) {
     $idseminar   = $_GET['id'];
-    $query = mysqli_query($db, "SELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nis = seminar.nis WHERE idseminar='$idseminar'") or die('Query Error : ' . mysqli_error($db));
+    $query = mysqli_query($db, "SELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nip = seminar.nip WHERE idseminar='$idseminar'") or die('Query Error : ' . mysqli_error($db));
     while ($data  = mysqli_fetch_assoc($query)) {
         $idseminar = $data['idseminar'];
-        $nis       = $data['nis'];
+        $nip       = $data['nip'];
         $judul     = $data['judul'];
         $statussem = $data['statussem'];
         $ket       = $data['ket'];
@@ -67,13 +67,13 @@ if (isset($_GET['id'])) {
                 $type1 = "readonly";
             }
 
-            if ($jab == "Penguji" and $bid == "Laporan" and $niss == $pengujilap) {
+            if ($jab == "Penguji" and $bid == "Laporan" and $nips == $pengujilap) {
                 $type2 = "";
             } else {
                 $type2 = "readonly";
             }
 
-            if ($jab == "Penguji" and $bid == "Aplikasi" and $niss == $pengujiapl) {
+            if ($jab == "Penguji" and $bid == "Aplikasi" and $nips == $pengujiapl) {
                 $type3 = "";
             } else {
                 $type3 = "readonly";

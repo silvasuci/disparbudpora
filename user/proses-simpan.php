@@ -6,10 +6,10 @@ if (isset($_POST['simpan'])) {
 	$username      = mysqli_real_escape_string($db, trim($_POST['username']));
 	$password  	   = mysqli_real_escape_string($db, trim($_POST['password']));
 	$level         = $_POST['level'];
-	$nis  		   = $_POST['nis'];
+	$nip  		   = $_POST['nip'];
 
 	// perintah query untuk menyimpan data ke tabel is_siswa
-	$query = mysqli_query($db, "INSERT INTO user (username, password, level, nis) VALUES('$username', '$password', '$level', '$nis')");
+	$query = mysqli_query($db, "INSERT INTO user (username, password, level, nip) VALUES('$username', '$password', '$level', '$nip')");
 
 	// cek hasil query
 	if ($query) {

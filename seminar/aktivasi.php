@@ -7,7 +7,7 @@ $ket            = $_POST['ket'];
 $pengujilap     = $_POST['pengujilap'];
 $pengujiapl     = $_POST['pengujiapl'];
 
-// jalankan query UPDATE berdasarkan NIS yang seminarnya kita edit
+// jalankan query UPDATE berdasarkan NIP yang seminarnya kita edit
 $query  = "UPDATE seminar SET statussem = '$statussem', ket = '$ket', pengujilap = '$pengujilap', pengujiapl =  '$pengujiapl'";
 $query .= "WHERE idseminar = '$idseminar'";
 $result = mysqli_query($db, $query);
