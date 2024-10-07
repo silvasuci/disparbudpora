@@ -1,6 +1,6 @@
 <br>
 <center>
-    <p><label>Formulir Pendaftaran Seminar</label>
+    <p><label>Formulir Pendaftaran SK Pokdarwis</label>
 </center>
 <div class=" row">
     <div class="col-md-12">
@@ -21,6 +21,14 @@
                         </div>
                     </div>
 
+    <footer class="footer">
+    <div class="form-group">
+    <label class="col-sm-2 control-label">contoh persyaratan yang harus di lampirkan</label>
+      <p class="text col-sm-2 print"> <a href="https://drive.google.com/file/d/1etUeCEhwowblC9JHU8Betgv-snBB5XH0/view?usp=drive_lin
+    " target="_blank">silahkan klik di sini</a></p>
+    </div>
+    
+  </footer>
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Judul Seminar</label>
                         <div class="col-sm-3">
@@ -29,7 +37,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">File Seminar</label>
+                        <label class="col-sm-2 control-label">Upload Persyaratan SK</label>
                         <div class="col-sm-3">
                             <input type="file" class="form-control" name="file" required>
                         </div>
