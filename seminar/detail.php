@@ -25,7 +25,7 @@
         ?>
 
         <ul class="list-group">
-            <li class="list-group-item active"><b>DETAIL DATA SEMINAR</b></li>
+            <li class="list-group-item active"><b>DETAIL DATA POKDARWIS
             <li class="list-group-item"><b>Id Seminar : </b><?php echo $idseminar; ?></li>
             <li class="list-group-item"><b>Nama Peserta : </b><?php echo $nama . " - " . $instansi; ?></li>
             <li class="list-group-item"><b>Judul : </b><?php echo $judul; ?></li>
