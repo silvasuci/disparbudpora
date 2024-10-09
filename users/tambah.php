@@ -3,7 +3,7 @@
         <div class="page-header">
             <h4>
                 <i class="glyphicon glyphicon-edit"></i>
-                Silahkan Lengkapi Data Diri Anda
+                Silahkan Lengkapi Data Pokdarwis Anda
                 <?php
                 $ids = $_SESSION['id'];
                 $jumlah_record1 = mysqli_query($db, "SELECT * FROM user where id = $ids") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
@@ -32,9 +32,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Nama Lengkap</label>
+                        <label class="col-sm-2 control-label">Nama </label>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" name="nama" autocomplete="off" required>
+                            <input type="text" class="form-control" name="nama" placeholder="Masukkan Nama Pokdarwis Anda" required>
                         </div>
                     </div>
 
@@ -48,7 +48,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Alamat</label>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" name="alamat" autocomplete="off" required>
+                            <input type="text" class="form-control" name="alamat" placeholder="Masukkan Alamat Pokdarwis Anda" required>
                         </div>
                     </div>
 
@@ -72,7 +72,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Telp</label>
                         <div class="col-sm-3">
-                            <input type="number" class="form-control" name="telp" autocomplete="off" required>
+                            <input type="number" class="form-control" name="telp" placeholder="Masukkan no telp yang bisa di hubungi" required>
 
                         </div>
                     </div>

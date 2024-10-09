@@ -1,6 +1,6 @@
 <?php
 if (isset($_GET['id'])) {
-    $nis   = $_GET['id'];
+    $nip   = $_GET['id'];
     $query = mysqli_query($db, "SELECT * FROM users WHERE nip='$nip'") or die('Query Error : ' . mysqli_error($db));
     while ($data  = mysqli_fetch_assoc($query)) {
         $nip      = $data['nip'];
@@ -21,7 +21,7 @@ if (isset($_GET['id'])) {
         <form class="form-horizontal" method="POST" action="?page=users-update" enctype="multipart/form-data">
 
             <div class="form-group">
-                <label class="col-sm-2 control-label">NIS</label>
+                <label class="col-sm-2 control-label">NIP</label>
                 <div class="col-sm-2">
                     <input type="text" class="form-control" name="nip" value="<?php echo $nip; ?>">
                 </div>
