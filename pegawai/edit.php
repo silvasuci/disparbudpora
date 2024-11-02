@@ -1,9 +1,9 @@
 <?php
 if (isset($_GET['id'])) {
-    $nip   = $_GET['id'];
-    $query = mysqli_query($db, "SELECT * FROM pegawai WHERE nip='$nip'") or die('Query Error : ' . mysqli_error($db));
+    $nis   = $_GET['id'];
+    $query = mysqli_query($db, "SELECT * FROM pegawai WHERE nis='$nis'") or die('Query Error : ' . mysqli_error($db));
     while ($data  = mysqli_fetch_assoc($query)) {
-        $nip      = $data['nip'];
+        $nis      = $data['nis'];
         $nama     = $data['nama'];
         $jabatan  = $data['jabatan'];
         $bidang   = $data['bidang'];
@@ -20,9 +20,9 @@ if (isset($_GET['id'])) {
         <form class="form-horizontal" method="POST" action="?page=pegawai-update" enctype="multipart/form-data">
 
             <div class="form-group">
-                <label class="col-sm-2 control-label">NIP</label>
+                <label class="col-sm-2 control-label">NIS</label>
                 <div class="col-sm-2">
-                    <input type="text" class="form-control" name="nip" value="<?php echo $nip; ?>" readonly>
+                    <input type="text" class="form-control" name="nis" value="<?php echo $nis; ?>" readonly>
                 </div>
             </div>
 

@@ -4,13 +4,13 @@
         <?php
         if (isset($_GET['id'])) {
             $nis   = $_GET['id'];
-            $query = mysqli_query($db, "SELECT * FROM users WHERE nip='$nip'") or die('Query Error : ' . mysqli_error($db));
+            $query = mysqli_query($db, "SELECT * FROM users WHERE nis='$nis'") or die('Query Error : ' . mysqli_error($db));
             while ($data  = mysqli_fetch_assoc($query)) {
-                $nip        = $data['nip'];
+                $nis        = $data['nis'];
                 $nama       = $data['nama'];
-                $tanggal_lahir    = $data['tanggal_lahir'];
+                $tanggal_buat    = $data['tanggal_buat'];
                 $alamat     = $data['alamat'];
-                $instansi     = $data['instansi'];
+                $potensi_wisata     = $data['potensi_wisata'];
                 $telp       = $data['telp'];
                 $stat      = $data['stat'];
                 $foto       = $data['foto'];
@@ -20,17 +20,17 @@
 
         <ul class="list-group">
             <li class="list-group-item active"><b>DETAIL DATA USERS</b></li>
-            <li class="list-group-item">NIP : <b><?php echo $nip; ?></b></li>
+            <li class="list-group-item">nis : <b><?php echo $nis; ?></b></li>
             <li class="list-group-item">Nama : <b><?php echo $nama; ?></b></li>
             <li class="list-group-item">Tanggal Buat : <b><?php echo $tanggal_buat; ?></b></li>
             <li class="list-group-item">Alamat : <b><?php echo $alamat; ?></b></li>
-            <li class="list-group-item">Instansi : <b><?php echo $instansi; ?></b></li>
+            <li class="list-group-item">potensi_wisata : <b><?php echo $potensi_wisata; ?></b></li>
             <li class="list-group-item">No. Telp : <b><?php echo $telp; ?></b></li>
             <li class="list-group-item">Status : <b><?php echo $stat; ?></b></li>
             <li class="list-group-item">
                 <div class="text-center">
                     <?php echo "<img src='users/gambar/$foto' width='auto' height='200' class='img-rounded' alt='Cinque Terre'>"; ?>
-                </div>
+              </div>
             </li>
         </ul>
 

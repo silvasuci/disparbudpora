@@ -67,7 +67,7 @@ if (isset($_POST['cari'])) {
 
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">Data Seminar</h3>
+                <h3 class="panel-title">Data Pokdarwis</h3>
             </div>
             <div class="panel-body">
                 <div class="table-responsive">
@@ -76,9 +76,8 @@ if (isset($_POST['cari'])) {
                             <tr>
                                 <th>No.</th>
                                 <th>Nama</th>
-                                <th>Instansi</th>
+                                <th>potensi_wisata</th>
                                 <th>Judul</th>
-                                <th>Status</th>
                                 <th class='center'>Aksi</th>
                             </tr>
                         </thead>
@@ -89,9 +88,9 @@ if (isset($_POST['cari'])) {
                             $batas = 10;
 
                             if (isset($cari)) {
-                                $jumlah_record = mysqli_query($db, "SELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nip = seminar.nip WHERE instansi LIKE '%$cari%' OR nama LIKE '%$cari%'") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
+                                $jumlah_record = mysqli_query($db, "SELECT seminar.*, users.nama, users.potensi_wisata FROM seminar JOIN users ON users.nis = seminar.nis WHERE potensi_wisata LIKE '%$cari%' OR nama LIKE '%$cari%'") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
                             } else {
-                                $jumlah_record = mysqli_query($db, "SSELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nip = seminar.nip") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
+                                $jumlah_record = mysqli_query($db, "SSELECT seminar.*, users.nama, users.potensi_wisata FROM seminar JOIN users ON users.nis = seminar.nis") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
                             }
 
                             $jumlah  = mysqli_num_rows($jumlah_record);
@@ -101,10 +100,10 @@ if (isset($_POST['cari'])) {
                             /*-------------------------------------------------------------------*/
                             $no = 1;
                             if (isset($cari)) {
-                                $query = mysqli_query($db, "SELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nip = seminar.nip WHERE instansi LIKE '%$cari%' OR nama LIKE '%$cari%' ORDER BY nip LIMIT $mulai, $batas")
+                                $query = mysqli_query($db, "SELECT seminar.*, users.nama, users.potensi_wisata FROM seminar JOIN users ON users.nis = seminar.nis WHERE potensi_wisata LIKE '%$cari%' OR nama LIKE '%$cari%' ORDER BY nis LIMIT $mulai, $batas")
                                     or die('Ada kesalahan pada query seminar: ' . mysqli_error($db));
                             } else {
-                                $query = mysqli_query($db, "SELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nip = seminar.nip ORDER BY nip LIMIT $mulai, $batas") or die('Ada kesalahan pada query seminar: ' . mysqli_error($db));
+                                $query = mysqli_query($db, "SELECT seminar.*, users.nama, users.potensi_wisata FROM seminar JOIN users ON users.nis = seminar.nis ORDER BY nis LIMIT $mulai, $batas") or die('Ada kesalahan pada query seminar: ' . mysqli_error($db));
                             }
 
                             while ($data = mysqli_fetch_assoc($query)) {
@@ -112,7 +111,7 @@ if (isset($_POST['cari'])) {
                                 echo "  <tr>
                       <td width='20'>$no</td>
                       <td width='100'>$data[nama]</td>
-                      <td width='75'>$data[instansi]</td>
+                      <td width='75'>$data[potensi_wisata]</td>
                       <td width='150'>$data[judul]</td>
                       <td width='50'>$data[statussem]</td>
                       <td width='100' class='center'>

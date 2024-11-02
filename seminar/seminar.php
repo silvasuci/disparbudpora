@@ -2,16 +2,16 @@
 <center>
     <?php
 
-    // Memanghil nip Users
+    // Memanghil nis Users
     $ids = $_SESSION['id'];
     $users = mysqli_query($db, "SELECT * FROM users where id = $ids") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
     $users1 = mysqli_fetch_assoc($users);
-    $nips = $users1['nip'];
+    $niss = $users1['nis'];
     $nama = $users1['nama'];
-    $instansi = $users1['instansi'];
+    $potensi_wisata = $users1['potensi_wisata'];
 
-    // Mencari record seminar berdasarkan nip Users
-    $jumlah_record = mysqli_query($db, "SELECT * FROM seminar where nip = $nips") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
+    // Mencari record seminar berdasarkan nis Users
+    $jumlah_record = mysqli_query($db, "SELECT * FROM seminar where nis = $niss") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
     $jumlah  = mysqli_num_rows($jumlah_record);
 
     // Jika tidak ditemukan maka tampilkan form tambah Seminar
@@ -21,10 +21,10 @@
         // Jika ditemukan
     } else {
 
-        $jumlah_record1 = mysqli_query($db, "SELECT * FROM seminar where nip = $nips") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
+        $jumlah_record1 = mysqli_query($db, "SELECT * FROM seminar where nis = $niss") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
         $data = mysqli_fetch_assoc($jumlah_record1);
         $idseminar = $data['idseminar'];
-        $nip = $data['nip'];
+        $nis = $data['nis'];
         $judul = $data['judul'];
         $file = $data['file'];
         $tautan = $data['tautan'];
@@ -33,8 +33,8 @@
 
         // Jika Belum disetujui
         if ($statussem == "Menunggu Persetujuan") {
-            echo "<p>Seminar anda sudah terdaftar, Namun belum disetujui admin, 
-            <p> Judul : <b> $data[judul] </b> 
+            echo "<p>Pokdarwis anda sudah terdaftar, Namun belum disetujui admin, 
+     
             <p>Silahkan konfirmasi kepada admin untuk disetujui. <hr>";
             include "linkwa.php";
 

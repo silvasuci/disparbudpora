@@ -8,13 +8,13 @@ if (isset($_POST['simpan'])) {
 		$username  = mysqli_real_escape_string($db, trim($_POST['username']));
 		$password  = mysqli_real_escape_string($db, trim($_POST['password']));
 		$level     = $_POST['level'];
-		$nip       = mysqli_real_escape_string($db, trim($_POST['nip']));
+		$nis       = mysqli_real_escape_string($db, trim($_POST['nis']));
 
 		// perintah query untuk mengubah data pada tabel is_siswa
 		$query = mysqli_query($db, "UPDATE user SET username 		= '$username',
 														password 	= '$password',
 														level 		= '$level',
-														nip 		= '$nip'
+														nis 		= '$nis'
 												  WHERE id 			= '$id'");
 		// cek query
 		if ($query) {

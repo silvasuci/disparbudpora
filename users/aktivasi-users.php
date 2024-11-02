@@ -1,14 +1,14 @@
 <?php
 if (isset($_GET['id'])) {
-    $nip   = $_GET['id'];
-    $query = mysqli_query($db, "SELECT * FROM users WHERE nip='$nip'") or die('Query Error : ' . mysqli_error($db));
+    $nis   = $_GET['id'];
+    $query = mysqli_query($db, "SELECT * FROM users WHERE nis='$nis'") or die('Query Error : ' . mysqli_error($db));
     while ($data  = mysqli_fetch_assoc($query)) {
-        $nip      = $data['nip'];
+        $nis      = $data['nis'];
         $nama     = $data['nama'];
         $tanggal_buat  = $data['tanggal_buat'];
         $alamat   = $data['alamat'];
         $telp     = $data['telp'];
-        $instansi    = $data['instansi'];
+        $potensi_wisata    = $data['potensi_wisata'];
         $stat    = $data['stat'];
         $foto     = $data['foto'];
     }
@@ -21,9 +21,9 @@ if (isset($_GET['id'])) {
         <form class="form-horizontal" method="POST" action="?page=aktivasi" enctype="multipart/form-data">
 
             <div class="form-group">
-                <label class="col-sm-2 control-label">NIP</label>
+                <label class="col-sm-2 control-label">nis</label>
                 <div class="col-sm-2">
-                    <input type="text" class="form-control" name="nip" value="<?php echo $nip; ?>">
+                    <input type="text" class="form-control" name="nis" value="<?php echo $nis; ?>">
                 </div>
             </div>
 

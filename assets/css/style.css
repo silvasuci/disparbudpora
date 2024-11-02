@@ -62,3 +62,13 @@ body {
 	width: 80px;
 	margin-left: 10px;
 }
+
+body {
+  background-image: url('assets/img/disparbudpora.jpg'); /* Path gambar */
+  background-size: cover; /* Gambar akan menutupi seluruh area */
+  background-position: center; /* Posisikan di tengah */
+  background-repeat: no-repeat; /* Tidak mengulang gambar */
+  height: 100vh; /* Mengatur tinggi agar gambar menutupi seluruh viewport */
+  margin: 0;
+  padding: 0;
+}

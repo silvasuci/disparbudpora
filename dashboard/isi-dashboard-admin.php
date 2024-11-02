@@ -3,9 +3,9 @@ include 'config/database.php';
 
 $ids = $_SESSION['id'];
 $levels = $_SESSION['level'];
-$jumlah_record1 = mysqli_query($db, "SELECT user.id, pegawai.* FROM user JOIN pegawai ON pegawai.nip = user.nip where id = $ids") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
+$jumlah_record1 = mysqli_query($db, "SELECT user.id, pegawai.* FROM user JOIN pegawai ON pegawai.nis = user.nis where id = $ids") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
 $data = mysqli_fetch_assoc($jumlah_record1);
-$nips = $data['nip'];
+$niss = $data['nis'];
 $namas = $data['nama'];
 $jabatans = $data['jabatan'];
 $bidangs = $data['bidang'];
@@ -32,19 +32,16 @@ $nilai_prakerin = mysqli_num_rows(mysqli_query($db, "SELECT * FROM seminar where
 $nilai_laporan = mysqli_num_rows(mysqli_query($db, "SELECT * FROM seminar where nilailaporan != '0'"));
 $nilai_aplikasi = mysqli_num_rows(mysqli_query($db, "SELECT * FROM seminar where nilaiaplikasi != '0'"));
 
-$percen_nilpra = (100 * $nilai_prakerin / $jum_seminar);
-$percen_nillap = (100 * $nilai_laporan / $jum_seminar);
-$percen_nilapl = (100 * $nilai_aplikasi / $jum_seminar);
 
 // alert dashboard admin
 if ($jum_users_belum_aktif != 0) {
-    echo "<div class='alert alert-info alert-dismissible' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Perhatian!</strong> $jum_users_belum_aktif users (siswa) baru belum diaktifkan.</div>";
+    echo "<div class='alert alert-info alert-dismissible' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Perhatian!</strong> $jum_users_belum_aktif users (Pokdarwis) baru belum diaktifkan.</div>";
 } else {
     "";
 }
 
 if ($jum_seminar_belum != 0) {
-    echo "<div class='alert alert-info alert-dismissible' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Perhatian!</strong> $jum_seminar_belum pendaftaran seminar belum disetujui.</div>";
+    echo "<div class='alert alert-info alert-dismissible' role='alert'><button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button><strong>Perhatian!</strong> $jum_seminar_belum pendaftaran SK belum disetujui.</div>";
 } else {
     "";
 }

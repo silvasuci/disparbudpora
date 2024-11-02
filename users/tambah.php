@@ -3,12 +3,12 @@
         <div class="page-header">
             <h4>
                 <i class="glyphicon glyphicon-edit"></i>
-                Silahkan Lengkapi Data Pokdarwis Anda
+                Silahkan Lengkapi Data Diri Anda
                 <?php
                 $ids = $_SESSION['id'];
                 $jumlah_record1 = mysqli_query($db, "SELECT * FROM user where id = $ids") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
                 $data = mysqli_fetch_assoc($jumlah_record1);
-                $nips = $data['nip'];
+                $niss = $data['nis'];
                 ?>
             </h4>
         </div> <!-- /.page-header -->
@@ -18,9 +18,9 @@
                 <form class="form-horizontal" action="?page=users-simpan" method="post" enctype="multipart/form-data">
 
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">NIP</label>
+                        <label class="col-sm-2 control-label">nis</label>
                         <div class="col-sm-3">
-                            <input type="text" class="form-control" name="nip" value="<?php echo $nips; ?>" autocomplete="off" readonly>
+                            <input type="text" class="form-control" name="nis" value="<?php echo $niss; ?>" autocomplete="off" readonly>
                         </div>
                     </div>
 
@@ -53,10 +53,10 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">Instansi</label>
+                        <label class="col-sm-2 control-label">potensi_wisata</label>
                         <div class="col-sm-3">
-                            <select class="form-control" name="instansi" placeholder="Pilih Instansi" required>
-                                <option value="">Pilih Instansi</option>
+                            <select class="form-control" name="potensi_wisata" placeholder="Pilih potensi_wisata" required>
+                                <option value="">Pilih potensi_wisata</option>
                                 <option value="Diskominfosanditik">Diskominfosanditik</option>
                                 <option value="BPKAD">BPKAD</option>
                                 <option value="Dinas Arsip">Dinas Arsip</option>

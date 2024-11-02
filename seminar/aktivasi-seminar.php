@@ -1,20 +1,15 @@
 <?php
 if (isset($_GET['id'])) {
     $idseminar   = $_GET['id'];
-    $query = mysqli_query($db, "SELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nip = seminar.nip WHERE idseminar='$idseminar'") or die('Query Error : ' . mysqli_error($db));
+    $query = mysqli_query($db, "SELECT seminar.*, users.nama, users.potensi_wisata FROM seminar JOIN users ON users.nis = seminar.nis WHERE idseminar='$idseminar'") or die('Query Error : ' . mysqli_error($db));
     while ($data  = mysqli_fetch_assoc($query)) {
         $idseminar = $data['idseminar'];
-        $nip       = $data['nip'];
+        $nis       = $data['nis'];
         $judul     = $data['judul'];
         $statussem    = $data['statussem'];
         $ket       = $data['ket'];
-        $pengujilap    = $data['pengujilap'];
-        $pengujiapl    = $data['pengujiapl'];
-        $nilaiprakerin = $data['nilaiprakerin'];
-        $nilailaporan  = $data['nilailaporan'];
-        $nilaiaplikasi = $data['nilaiaplikasi'];
         $nama = $data['nama'];
-        $instansi = $data['instansi'];
+        $potensi_wisata = $data['potensi_wisata'];
     }
 }
 ?>
@@ -27,9 +22,9 @@ if (isset($_GET['id'])) {
             <input type="hidden" class="form-control" name="idseminar" value="<?php echo $idseminar; ?>">
 
             <div class="form-group">
-                <label class="col-sm-2 control-label">Nama - Instansi</label>
+                <label class="col-sm-2 control-label">Nama - potensi_wisata</label>
                 <div class="col-sm-6">
-                    <h5><?php echo $nama . " - " . $instansi; ?></h5>
+                    <h5><?php echo $nama . " - " . $potensi_wisata; ?></h5>
                 </div>
             </div>
 
@@ -60,39 +55,20 @@ if (isset($_GET['id'])) {
                 </div>
             </div>
 
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Penguji Laporan</label>
-                <div class="col-sm-3">
-                    <select class="form-control" name="pengujilap" placeholder="Pilih" required>
-                        <option value="<?php echo $pengujilap; ?>">Penguji Laporan - <?php echo $pengujilap; ?></option>
+        
 
                         <?php
                         $query = "SELECT * FROM pegawai where bidang = 'Laporan' ";
                         $result = mysqli_query($db, $query);
                         foreach ($result as $data) { ?>
-                            <option value=" <?php echo $data["nip"]; ?> "> <?php echo $data["nip"] . " - " . $data["nama"]; ?> </option>
+                            <option value=" <?php echo $data["nis"]; ?> "> <?php echo $data["nis"] . " - " . $data["nama"]; ?> </option>
                         <?php } ?>
 
                     </select>
                 </div>
             </div>
 
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Penguji Aplikasi</label>
-                <div class="col-sm-3">
-                    <select class="form-control" name="pengujiapl" placeholder="Pilih" required>
-                        <option value="<?php echo $pengujiapl; ?>">Penguji Aplikasi - <?php echo $pengujiapl; ?></option>
-
-                        <?php
-                        $query = "SELECT * FROM pegawai where bidang = 'Aplikasi' ";
-                        $result = mysqli_query($db, $query);
-                        foreach ($result as $data) { ?>
-                            <option value=" <?php echo $data["nip"]; ?> "> <?php echo $data["nip"] . " - " . $data["nama"]; ?> </option>
-                        <?php } ?>
-
-                    </select>
-                </div>
-            </div>
+           
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">

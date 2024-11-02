@@ -4,11 +4,10 @@ require_once 'config/database.php';
 $idseminar      = $_POST['idseminar'];
 $statussem      = $_POST['statussem'];
 $ket            = $_POST['ket'];
-$pengujilap     = $_POST['pengujilap'];
-$pengujiapl     = $_POST['pengujiapl'];
 
-// jalankan query UPDATE berdasarkan NIP yang seminarnya kita edit
-$query  = "UPDATE seminar SET statussem = '$statussem', ket = '$ket', pengujilap = '$pengujilap', pengujiapl =  '$pengujiapl'";
+
+// jalankan query UPDATE berdasarkan nis yang seminarnya kita edit
+$query  = "UPDATE seminar SET statussem = '$statussem', ket = '$ket'";
 $query .= "WHERE idseminar = '$idseminar'";
 $result = mysqli_query($db, $query);
 // periska query apakah ada error

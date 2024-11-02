@@ -3,11 +3,11 @@
 require_once 'config/database.php';
 
 // membuat variabel untuk menampung data dari form
-$nip        = $_POST['nip'];
+$nis        = $_POST['nis'];
 $nama       = $_POST['nama'];
 $tanggal_buat    = $_POST['tanggal_buat'];
 $alamat     = $_POST['alamat'];
-$instansi   = $_POST['instansi'];
+$potensi_wisata   = $_POST['potensi_wisata'];
 $stat     = $_POST['stat'];
 $telp       = $_POST['telp'];
 $foto       = $_FILES['foto']['name'];
@@ -24,9 +24,9 @@ if ($foto != "") {
     if (in_array($ekstensi, $ekstensi_diperbolehkan) === true) {
         move_uploaded_file($file_tmp, 'users/gambar/' . $nama_foto_baru); //memindah file foto ke folder foto
 
-        // jalankan query UPDATE berdasarkan NIP yang usersnya kita edit
-        $query  = "UPDATE users SET nip = '$nip', nama = '$nama', tanggal_buat = '$tanggal_buat', alamat = '$alamat', instansi = '$instansi', stat = '$stat', telp = '$telp',  foto = '$nama_foto_baru'";
-        $query .= "WHERE nip = '$nip'";
+        // jalankan query UPDATE berdasarkan nis yang usersnya kita edit
+        $query  = "UPDATE users SET nis = '$nis', nama = '$nama', tanggal_buat = '$tanggal_buat', alamat = '$alamat', potensi_wisata = '$potensi_wisata', stat = '$stat', telp = '$telp',  foto = '$nama_foto_baru'";
+        $query .= "WHERE nis = '$nis'";
         $result = mysqli_query($db, $query);
         // periska query apakah ada error
         if (!$result) {
@@ -40,9 +40,9 @@ if ($foto != "") {
         echo "<script>window.location='?page=users-tampil&alert=5';</script>";
     }
 } else {
-    // jalankan query UPDATE berdasarkan NIP yang usersnya kita edit
-    $query  = "UPDATE users SET nip = '$nip', nama = '$nama', tanggal_buat = '$tanggal_buat', alamat = '$alamat', instansi = '$instansi', stat = '$stat', telp = '$telp'";
-    $query .= "WHERE nip = '$nip'";
+    // jalankan query UPDATE berdasarkan nis yang usersnya kita edit
+    $query  = "UPDATE users SET nis = '$nis', nama = '$nama', tanggal_buat = '$tanggal_buat', alamat = '$alamat', potensi_wisata = '$potensi_wisata', stat = '$stat', telp = '$telp'";
+    $query .= "WHERE nis = '$nis'";
     $result = mysqli_query($db, $query);
     // periska query apakah ada error
     if (!$result) {

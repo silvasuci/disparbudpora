@@ -38,9 +38,9 @@
             </div>
 
             <div class="form-group">
-              <label class="col-sm-2 control-label">Nip</label>
+              <label class="col-sm-2 control-label">Nis</label>
               <div class="col-sm-2">
-                <input type="text" class="form-control" name="nip" required>
+                <input type="text" class="form-control" name="nis" required>
               </div>
             </div>
 

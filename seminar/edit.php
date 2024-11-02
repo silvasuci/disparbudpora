@@ -1,14 +1,14 @@
 <?php
 if (isset($_GET['id'])) {
-    $nip   = $_GET['id'];
-    $query = mysqli_query($db, "SELECT * FROM users WHERE nip='$nip'") or die('Query Error : ' . mysqli_error($db));
+    $nis   = $_GET['id'];
+    $query = mysqli_query($db, "SELECT * FROM users WHERE nis='$nis'") or die('Query Error : ' . mysqli_error($db));
     while ($data  = mysqli_fetch_assoc($query)) {
-        $nip      = $data['nip'];
+        $nis      = $data['nis'];
         $nama     = $data['nama'];
-        $tanggal_lahir  = $data['tanggal_lahir'];
+        $tanggal_buat  = $data['tanggal_buat'];
         $alamat   = $data['alamat'];
         $telp     = $data['telp'];
-        $instansi    = $data['instansi'];
+        $potensi_wisata    = $data['potensi_wisata'];
         $stat    = $data['stat'];
         $foto     = $data['foto'];
     }
@@ -21,9 +21,9 @@ if (isset($_GET['id'])) {
         <form class="form-horizontal" method="POST" action="?page=users-update" enctype="multipart/form-data">
 
             <div class="form-group">
-                <label class="col-sm-2 control-label">nip</label>
+                <label class="col-sm-2 control-label">nis</label>
                 <div class="col-sm-2">
-                    <input type="text" class="form-control" name="nip" value="<?php echo $nip; ?>">
+                    <input type="text" class="form-control" name="nis" value="<?php echo $nis; ?>">
                 </div>
             </div>
 
@@ -35,9 +35,9 @@ if (isset($_GET['id'])) {
             </div>
 
             <div class="form-group">
-                <label class="col-sm-2 control-label">Tanggal Lahir</label>
+                <label class="col-sm-2 control-label">Tanggal buat</label>
                 <div class="col-sm-2">
-                    <input type="date" class="form-control" name="tanggal_lahir" autocomplete="off" value="<?php echo $tanggal_lahir; ?>">
+                    <input type="date" class="form-control" name="tanggal_buat" autocomplete="off" value="<?php echo $tanggal_buat; ?>">
                 </div>
             </div>
 
@@ -49,19 +49,9 @@ if (isset($_GET['id'])) {
             </div>
 
             <div class="form-group">
-                <label class="col-sm-2 control-label">Instansi</label>
+                <label class="col-sm-2 control-label">Potensi wisata</label>
                 <div class="col-sm-2">
-                    <select class="form-control" name="instansi" placeholder="Pilih instansi">
-                        <option value="<?php echo $instansi; ?>"><?php echo $instansi; ?></option>
-                        <option value="Diskominfosanditik">Diskominfosanditik</option>
-                        <option value="BPKAD">BPKAD</option>
-                        <option value="Dinas Arsip">Dinas Arsip</option>
-                        <option value="Kementerian Agama">Kementerian Agama</option>
-                        <option value="Disparbudpora">Disparbudpora</option>
-                        <option value="Disdukcapil">Disdukcapil</option>
-                        <option value="Dinas Pendidikan">Dinas Pendidikan</option>
-                        <option value="Diskoperindag">Diskoperindag</option>
-                    </select>
+                    <input type="text" class="form-control" name="potensi_wisata" value="<?php echo $alamat; ?>">
                 </div>
             </div>
 

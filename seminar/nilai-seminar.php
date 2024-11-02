@@ -2,21 +2,21 @@
 <?php
 
 $ids = $_SESSION['id'];
-$jabbid = mysqli_query($db, "SELECT user.id, pegawai.* FROM user JOIN pegawai ON pegawai.nip = user.nip where id = $ids") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
+$jabbid = mysqli_query($db, "SELECT user.id, pegawai.* FROM user JOIN pegawai ON pegawai.nis = user.nis where id = $ids") or die('Ada kesalahan pada query jumlah_record: ' . mysqli_error($db));
 $jb = mysqli_fetch_assoc($jabbid);
-$nips = $jb['nip'];
+$niss = $jb['nis'];
 $nama = $jb['nama'];
 $jab = $jb['jabatan'];
 $bid = $jb['bidang'];
 
-echo $nips . $bid . $jab . $nama;
+echo $niss . $bid . $jab . $nama;
 
 if (isset($_GET['id'])) {
     $idseminar   = $_GET['id'];
-    $query = mysqli_query($db, "SELECT seminar.*, users.nama, users.instansi FROM seminar JOIN users ON users.nip = seminar.nip WHERE idseminar='$idseminar'") or die('Query Error : ' . mysqli_error($db));
+    $query = mysqli_query($db, "SELECT seminar.*, users.nama, users.potensi_wisata_wisata FROM seminar JOIN users ON users.nis = seminar.nis WHERE idseminar='$idseminar'") or die('Query Error : ' . mysqli_error($db));
     while ($data  = mysqli_fetch_assoc($query)) {
         $idseminar = $data['idseminar'];
-        $nip       = $data['nip'];
+        $nis       = $data['nis'];
         $judul     = $data['judul'];
         $statussem = $data['statussem'];
         $ket       = $data['ket'];
@@ -26,7 +26,7 @@ if (isset($_GET['id'])) {
         $nilailaporan  = $data['nilailaporan'];
         $nilaiaplikasi = $data['nilaiaplikasi'];
         $nama          = $data['nama'];
-        $instansi      = $data['instansi'];
+        $potensi_wisata      = $data['potensi_wisata'];
     }
 }
 ?>
@@ -39,9 +39,9 @@ if (isset($_GET['id'])) {
             <input type="hidden" class="form-control" name="idseminar" value="<?php echo $idseminar; ?>">
 
             <div class="form-group">
-                <label class="col-sm-2 control-label">Nama - Instansi</label>
+                <label class="col-sm-2 control-label">Nama - potensi_wisata</label>
                 <div class="col-sm-6">
-                    <h5><?php echo $nama . " - " . $instansi; ?></h5>
+                    <h5><?php echo $nama . " - " . $potensi_wisata; ?></h5>
                 </div>
             </div>
 
@@ -61,19 +61,19 @@ if (isset($_GET['id'])) {
 
             <?php
 
-            if ($jab == "Pembimbing" and $bid == $instansi) {
+            if ($jab == "Pembimbing" and $bid == $potensi_wisata) {
                 $type1 = "";
             } else {
                 $type1 = "readonly";
             }
 
-            if ($jab == "Penguji" and $bid == "Laporan" and $nips == $pengujilap) {
+            if ($jab == "Penguji" and $bid == "Laporan" and $nis == $pengujilap) {
                 $type2 = "";
             } else {
                 $type2 = "readonly";
             }
 
-            if ($jab == "Penguji" and $bid == "Aplikasi" and $nips == $pengujiapl) {
+            if ($jab == "Penguji" and $bid == "Aplikasi" and $nis == $pengujiapl) {
                 $type3 = "";
             } else {
                 $type3 = "readonly";

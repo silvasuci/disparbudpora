@@ -1,3 +1,4 @@
+
 <br>
 
 <?php
@@ -60,26 +61,16 @@ include "isi-dashboard-admin.php";
         <div class="list-group">
             <li class="list-group-item list-group-item-info" align=" center"><b>NILAI</b></li>
             <li class="list-group-item">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $percen_nilpra; ?>%">
-                    </div>
-                </div><b>Prakerin</b> <?php echo $nilai_prakerin; ?> dari <?php echo $jum_seminar; ?> sudah dinilai (<?php echo $percen_nilpra; ?>%).
+                <b>Prakerin</b> <?php echo $nilai_prakerin; ?> dari <?php echo $jum_seminar; ?> sudah dinilai.
             </li>
 
             <li class="list-group-item">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $percen_nillap; ?>%">
-                    </div>
-                </div><b>Laporan</b> <?php echo $nilai_laporan; ?> dari <?php echo $jum_seminar; ?> sudah dinilai (<?php echo $percen_nilpra; ?>%).
+                <b>Laporan</b> <?php echo $nilai_laporan; ?> dari <?php echo $jum_seminar; ?> sudah dinilai.
             </li>
 
             <li class="list-group-item">
-                <div class="progress">
-                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $percen_nilapl; ?>%">
-                    </div>
-                </div><b>Aplikasi</b> <?php echo $nilai_aplikasi; ?> dari <?php echo $jum_seminar; ?> sudah dinilai (<?php echo $percen_nilpra; ?>%).
+                <b>Aplikasi</b> <?php echo $nilai_aplikasi; ?> dari <?php echo $jum_seminar; ?> sudah dinilai.
             </li>
         </div>
     </div>
-
 </div>

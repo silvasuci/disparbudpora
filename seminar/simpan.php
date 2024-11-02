@@ -1,7 +1,7 @@
 <?php
 include 'config/database.php';
 
-$nip     = $_POST['nip'];
+$nis     = $_POST['nis'];
 $judul   = $_POST['judul'];
 $tautan  = $_POST['tautan'];
 $statussem  = $_POST['statussem'];
@@ -24,7 +24,7 @@ if (!in_array($ext, $ekstensi)) {
     if ($ukuran < 10044070) {
         $xx = $rand . '_' . $filename;
         move_uploaded_file($_FILES['file']['tmp_name'], 'seminar/files/' . $rand . '_' . $filename);
-        mysqli_query($db, "INSERT INTO seminar VALUES('null','$nip','$judul','$xx','$tautan','$statussem','$ket','$pengujilap','$pengujiapl','$nilaiprakerin','$nilailaporan','$nilaiaplikasi')");
+        mysqli_query($db, "INSERT INTO seminar VALUES('null','$nis','$judul','$xx','$tautan','$statussem','$ket','$pengujilap','$pengujiapl','$nilaiprakerin','$nilailaporan','$nilaiaplikasi')");
         header("location:?page=seminar&alert=2");
     } else {
         header("location:?page=seminar&alert=1");

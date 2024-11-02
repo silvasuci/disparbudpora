@@ -1,30 +1,68 @@
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+<html>
 
-            <a class="navbar-brand" href="index.php">
-                <i class="glyphicon glyphicon-grain"></i>
-                <b>Disparbudpora</b> <span class="badge"><?php echo $_SESSION['level']; ?></span></a>
-        </div>
-        <?php
-        $ids = $_SESSION['id'];
-        ?>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="?page=user-tampil"> <i class="glyphicon glyphicon-credit-card"></i> ACCOUNT </a></li>
-                <li><a href="?page=users-tampil"> <i class="glyphicon glyphicon-user"></i> USERS </a></li>
-                <li><a href="?page=pegawai-tampil"> <i class="glyphicon glyphicon-user"></i> PEGAWAI</a></li>
-                <li><a href="?page=seminar-tampil"> <i class="glyphicon glyphicon-blackboard"></i> SEMINAR</a></li>
-                <li><a href="?page=tampil-nilai"> <i class="glyphicon glyphicon-blackboard"></i> NILAI</a></li>
+<body>
+    <div class="sidebar-content js-simplebar">
+        <a class="sidebar-brand" href="index.php">
+            <span class="align-middle">PUSAKA
+            </span>
+        </a>
 
-                <li><a href="?page=ubah&id=<?php echo $ids ?>"><i class="glyphicon glyphicon-cog"></i> SET</a></li>
-                <li><a href="config/backup.php"><i class="glyphicon glyphicon-floppy-save"></i> BACKUP DB</a></li>
-                <li><a href="logout.php"> <i class="glyphicon glyphicon-log-out"></i></a></li>
-            </ul>
-        </div>
+        <ul class="sidebar-nav">
+            <li class="sidebar-header">
+                Menu
+            </li>
+
+            <li class="sidebar-item active">
+                <a class="sidebar-link" href="index.php">
+                    <i class="align-middle" data-feather="award"></i> <span class="align-middle">Dashboard</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="?page=user-tampil">
+                    <i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">User</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="?page=users-tampil">
+                    <i class="align-middle" data-feather="user"></i> <span class="align-middle">Users</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="?page=pegawai-tampil">
+                    <i class="align-middle" data-feather="users"></i> <span class="align-middle">Pegawai</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="?page=seminar-tampil">
+                    <i class="align-middle" data-feather="file-text"></i> <span class="align-middle">Seminar</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="?page=nilai-tampil">
+                    <i class="align-middle" data-feather="award"></i> <span class="align-middle">Nilai</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="config/backup.php">
+                    <i class="align-middle" data-feather="server"></i> <span class="align-middle">Backup DB</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item">
+                <a class="sidebar-link" href="?page=absen-input">
+                    <i class="align-middle" data-feather="server"></i> <span class="align-middle">Input Absen</span>
+                </a>
+            </li>
+
+        </ul>
+
     </div>
+</body>
+
+</html>
