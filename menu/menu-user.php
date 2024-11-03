@@ -1,16 +1,20 @@
 <div class="container-fluid">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">PUSAKA</span>
+    <div class="text-center">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">DISPARBUDPORA</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
+<br>
+        <p><div class="text-center">
+		<img src="assets/img/icons/logopusaka.png" alt="logo" class="img-fluid rounded-circle" width="125" height="125" >
+		</div></p>
 
         <a class="navbar-brand" href="index.php">
             <i class="glyphicon glyphicon-grain"></i>
-            <b>Pengesahan Usulan <br>
-             Surat Keterangan</b> <span class="badge">
+            <b>Pengesahan Usulan 
+             Surat<br> Keputusan</b> <span class="badge">
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -44,10 +48,12 @@
 
 <body>
     <div class="sidebar-content js-simplebar">
-        <a class="sidebar-brand" href="index.php">
-            <span class="align-middle">MENU
-            </span>
-        </a>
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">MENU</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
 
         <ul class="sidebar-nav">
             <li class="sidebar-header">

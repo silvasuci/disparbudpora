@@ -10,7 +10,7 @@
 	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link rel="shortcut icon" href="assets/img/icons/kujang.png" />
+	<link rel="shortcut icon" href="assets/img/icons/logopusaka.png" />
 
 	<link rel="canonical" href="https://demo-basic.adminkit.io/pages-sign-in.html" />
 
@@ -51,9 +51,9 @@
 
 						<div class="card">
 							<div class="card-body">
-								<div class="m-sm-4">
+								<div class="sm-1">
 									<div class="text-center">
-										<img src="assets/img/icons/hhh.png" alt="logo" class="img-fluid rounded-circle" width="132" height="132" />
+										<img src="assets/img/icons/logopusaka.png" alt="logo" class="img-fluid rounded-circle" width="132" height="132" />
 									</div>
 									
 									<form action="cek_login.php" method="post">

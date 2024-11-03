@@ -2,7 +2,7 @@
 -- Database Backup --
 -- Ver. : 1.0.1
 -- Host : 127.0.0.1
--- Generating Time : Nov 02, 2024 at 02:22:19:AM
+-- Generating Time : Nov 02, 2024 at 07:49:05:AM
 
 
 CREATE TABLE `pegawai` (
@@ -34,12 +34,14 @@ CREATE TABLE `seminar` (
   `nilailaporan` int(3) NOT NULL,
   `nilaiaplikasi` int(3) NOT NULL,
   PRIMARY KEY (`idseminar`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO seminar VALUES
 ("22","155","pengesahan sk pokdarwis","1537362345_Pembentukan Pokdarwis Desa Cijambu.pdf","","Menunggu Persetujuan","","0","0","0","0","0"),
 ("23","444","","591465487_Pembentukan Pokdarwis Desa Cijambu.pdf","","Menunggu Persetujuan","","0","0","0","0","0"),
-("24","2","","471485420_contoh surat penggantar.pdf","","Menunggu Persetujuan","","0","0","0","0","0");
+("24","2","","471485420_contoh surat penggantar.pdf","","Menunggu Persetujuan","","0","0","0","0","0"),
+("25","656","","2019533927_Pembentukan Pokdarwis Desa Cijambu.pdf","","Menunggu Persetujuan","","0","0","0","0","0"),
+("26","9","","651583574_Pembentukan Pokdarwis Desa Cijambu.pdf","","Menunggu Persetujuan","","0","0","0","0","0");
 
 CREATE TABLE `user` (
   `id` bigint(12) NOT NULL AUTO_INCREMENT,
@@ -48,19 +50,13 @@ CREATE TABLE `user` (
   `level` varchar(30) NOT NULL,
   `nis` varchar(9) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1284567953667 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1284567953669 DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO user VALUES
 ("1","Ajat Sudrajat","ahmad","Admin","1"),
-("2","fzzy_ahmady","ahmad","User","2"),
-("4","wulan permatasari","wulan","pegawai","444"),
-("6","hamid","hamid","User","6"),
-("10","syatia","satiaa","User","10"),
-("155","majid","majid","User","155"),
-("656","zahronn_31","666","User","656"),
-("777","aceng","suraceng","Pegawai","777"),
-("999","zahronn_31","9999","User","999"),
-("99999999","aceng","999999","User","99999999");
+("2","fzzy_ahmad","ahmad","User","9"),
+("999","pa eka","eka","Pegawai","999"),
+("9990","aceng","9990","User","9990");
 
 CREATE TABLE `users` (
   `nis` bigint(12) unsigned NOT NULL,
@@ -77,6 +73,7 @@ CREATE TABLE `users` (
 
 INSERT INTO users VALUES
 ("0","155","pajagan","0000-00-00","darmaraja","Disparbudpora","1197","Aktif","912160482_Screenshot (25).png"),
-("2","2","samalengoh","2024-11-01","gunung datar","","123456789","Belum Aktif","2081706848_Screenshot_20231106_190853.png"),
+("9","2","alam+buatan","2024-11-02","darmaraja","","085220507207","Belum Aktif","480013590_Tampilan-Form-Class-Diagram-Aplikasi-Pengolahan-Data-Pembayaran-Sequence-Diagram.png"),
 ("15","15","samalengoh","2024-10-12","gunung datar","Disparbudpora","0822222","Aktif","991373728_1.png"),
+("656","656","pajagan","2024-11-02","darmaraja","Diskoperindag","909090909","Belum Aktif","1997848228_Tampilan-Form-Class-Diagram-Aplikasi-Pengolahan-Data-Pembayaran-Sequence-Diagram.png"),
 ("9900","9900","cibungur","2024-10-21","darmaraja","Diskoperindag","090909090909","Aktif","389431743_Screenshot (11).png");

@@ -18,7 +18,7 @@
                 <form class="form-horizontal" action="?page=users-simpan" method="post" enctype="multipart/form-data">
 
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">nis</label>
+                        <label class="col-sm-2 control-label">Nis</label>
                         <div class="col-sm-3">
                             <input type="text" class="form-control" name="nis" value="<?php echo $niss; ?>" autocomplete="off" readonly>
                         </div>
@@ -53,19 +53,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="col-sm-2 control-label">potensi_wisata</label>
+                        <label class="col-sm-2 control-label">Potensi wisata </label>
                         <div class="col-sm-3">
-                            <select class="form-control" name="potensi_wisata" placeholder="Pilih potensi_wisata" required>
-                                <option value="">Pilih potensi_wisata</option>
-                                <option value="Diskominfosanditik">Diskominfosanditik</option>
-                                <option value="BPKAD">BPKAD</option>
-                                <option value="Dinas Arsip">Dinas Arsip</option>
-                                <option value="Kementerian Agama">Kementerian Agama</option>
-                                <option value="Disparbudpora">Disparbudpora</option>
-                                <option value="Disdukcapil">Disdukcapil</option>
-                                <option value="Dinas Pendidikan">Dinas Pendidikan</option>
-                                <option value="Diskoperindag">Diskoperindag</option>
-                            </select>
+                            <input type="text" class="form-control" name="nama" placeholder="Masukkan potensi wisata Anda" required>
                         </div>
                     </div>
 

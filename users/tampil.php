@@ -92,10 +92,10 @@ if (isset($_POST['cari'])) {
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
-                                <th>No.</th>
-                                <th>nis</th>
+                                <th>No</th>
+                                <th>Nis</th>
                                 <th>Nama</th>
-                                <th>potensi_wisata</th>
+                                <th>Potensi Wisata</th>
                                 <th>Status</th>
                                 <th class='center'>Aksi</th>
                             </tr>

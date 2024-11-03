@@ -78,7 +78,7 @@ if (isset($_POST['cari'])) {
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
-                                <th>No.</th>
+                                <th>No</th>
                                 <th>NIS</th>
                                 <th>Nama</th>
                                 <th>Jabatan</th>

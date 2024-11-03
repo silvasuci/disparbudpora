@@ -1,6 +1,10 @@
 <?php
+// file admin-routes.php ini berfungsi sebagai perutean tampilan yang diminta oleh pengguna. nantinya file ini dipanggil ke dalam body file index.php yang berfungsi sebagai wadah/frame bagi konten yang diminta oleh pengguna.
+
+
 if (empty($_GET["page"])) {
-    include "dashboard/dashboard-admin.php";
+    include "dashboard/dashboard-admin.php"; // Tampilan default jika tidak ada permintaan halaman tertentu pada index., maka pada index akan ditampilkan halaman dashboard-admin.php yang ada pada folder dashboard.
+
     // User
 } elseif ($_GET['page'] == 'user-tampil') {
     include "user/tampil-data.php";
@@ -16,6 +20,7 @@ if (empty($_GET["page"])) {
     include "user/detail.php";
 } elseif ($_GET['page'] == 'proses-hapus') {
     include "user/proses-hapus.php";
+
     // Pegawai
 } elseif ($_GET['page'] == 'pegawai-tampil') {
     include "pegawai/tampil.php";
@@ -35,6 +40,7 @@ if (empty($_GET["page"])) {
     include "pegawai/print-detail.php";
 } elseif ($_GET['page'] == 'pegawai-kirim') {
     include "pegawai/kirim.php";
+
     // Users
 } elseif ($_GET['page'] == 'users-tampil') {
     include "users/tampil.php";
@@ -48,6 +54,7 @@ if (empty($_GET["page"])) {
     include "users/hapus.php";
 } elseif ($_GET['page'] == 'users-print-detail') {
     include "users/print-detail.php";
+
     // Seminar
 } elseif ($_GET['page'] == 'seminar-tampil') {
     include "seminar/tampil.php";
@@ -63,13 +70,4 @@ if (empty($_GET["page"])) {
     include "seminar/hapus.php";
 } elseif ($_GET['page'] == 'tampil-nilai') {
     include "seminar/tampil-nilai.php";
-}    
-
-    // Absen
- elseif ($_GET['page'] == 'absen-input') {
-    include "absen/input.php";
-} elseif ($_GET['page'] == 'foto-input') {
-    include "absen/index1.php";
-} elseif ($_GET['page'] == 'foto-proses') {
-    include "absen/storeImage.php";
 }
